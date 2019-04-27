@@ -19,3 +19,5 @@ vvp testbench.vvp
 [The Control Unit 2](http://fourier.eng.hmc.edu/e85_old/lectures/processor/node5.html)
 
 [[筆記] 計算機組織：MIPS 指令集 (一)](https://isite.tw/2015/03/17/13075)
+
+[MIPS 指令集(共31條)](https://blog.csdn.net/yixilee/article/details/4316617)
