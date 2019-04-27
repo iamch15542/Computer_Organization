@@ -17,3 +17,5 @@ vvp testbench.vvp
 [The Control Unit](http://www.pitt.edu/~kmram/CoE0147/lectures/datapath3.pdf)
 
 [The Control Unit 2](http://fourier.eng.hmc.edu/e85_old/lectures/processor/node5.html)
+
+[[筆記] 計算機組織：MIPS 指令集 (一)](https://isite.tw/2015/03/17/13075)
