@@ -11,12 +11,12 @@
 
 module Decoder(
     instr_op_i,
-	RegWrite_o,
-	ALU_op_o,
-	ALUSrc_o,
-	RegDst_o,
-	Branch_o
-	);
+    RegWrite_o,
+    ALU_op_o,
+    ALUSrc_o,
+    RegDst_o,
+    Branch_o
+    );
      
 //I/O ports
 input  [6-1:0] instr_op_i;

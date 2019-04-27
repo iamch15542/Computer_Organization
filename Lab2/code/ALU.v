@@ -11,12 +11,12 @@
 
 module ALU(
     src1_i,
-	src2_i,
-	ctrl_i,
-	shamt,
-	result_o,
-	zero_o
-	);
+    src2_i,
+    ctrl_i,
+    shamt,
+    result_o,
+    zero_o
+    );
      
 //I/O ports
 input  [32-1:0]  src1_i;
@@ -78,17 +78,10 @@ always @(ctrl_i, src1_i, src2_i) begin
         BNE     : result_o <= (src1_i != src2_i) ? 32'b0 : 32'b1; // zero if true
         ADDI    : result_o <= signed_src1 + signed_src2;
         SLTIU   : result_o <= (unsigned_src1 < unsigned_src2);
-		LUI     : result_o <= {src2_i[15:0], 16'b0};
-		ORI     : result_o <= src1_i | {16'b0, src2_i[15:0]};
+        LUI     : result_o <= {src2_i[15:0], 16'b0};
+        ORI     : result_o <= src1_i | {16'b0, src2_i[15:0]};
         SLL     : result_o <= src1_i << shamt;
     endcase
 end
 
 endmodule
-
-
-
-
-
-                    
-                    

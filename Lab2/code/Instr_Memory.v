@@ -11,8 +11,8 @@
 
 module Instr_Memory(
     pc_addr_i,
-	instr_o
-	);
+    instr_o
+    );
  
 //I/O ports
 input  [32-1:0]  pc_addr_i;
@@ -40,10 +40,3 @@ initial begin
 		
 end
 endmodule
-
-
-
-
-
-                    
-                    
