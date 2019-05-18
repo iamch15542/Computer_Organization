@@ -1,0 +1,25 @@
+# Lab 3: Single Cycle CPU
+
+### 操作指令
+***
+
+iverilog -o testbench.vvp testbench.v Simple\_Single\_CPU.v Adder.v ALU\_Ctrl.v ALU.v Decoder.v Instr\_Memory.v MUX\_2to1.v ProgramCounter.v Reg\_File.v Shift\_Left\_Two\_32.v Sign\_Extend.v MUX\_3to1.v MUX\_4to1.v Data\_Memory.v
+
+vvp testbench.vvp
+
+### Reference
+***
+
+[MIPS Reference Sheet](https://inst.eecs.berkeley.edu/~cs61c/resources/MIPS_help.html)
+
+[Plasma - most MIPS I(TM) opcodes :: Opcodes](https://opencores.org/projects/plasma/opcodes)
+
+[The Control Unit](http://www.pitt.edu/~kmram/CoE0147/lectures/datapath3.pdf)
+
+[The Control Unit 2](http://fourier.eng.hmc.edu/e85_old/lectures/processor/node5.html)
+
+[[筆記] 計算機組織：MIPS 指令集 (一)](https://isite.tw/2015/03/17/13075)
+
+[MIPS 指令集(共31條)](https://blog.csdn.net/yixilee/article/details/4316617)
+
+[katelo731/CO_Lab](https://github.com/katelo731/CO_Lab)
