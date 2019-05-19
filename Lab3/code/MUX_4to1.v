@@ -17,10 +17,10 @@ module MUX_4to1(
                data_o
                );
 
-parameter size = 0;			   
-			
+parameter size = 0;
+
 //I/O ports               
-input   [size-1:0] data0_i;          
+input   [size-1:0] data0_i;
 input   [size-1:0] data1_i;
 input   [size-1:0] data2_i;
 input   [size-1:0] data3_i;
@@ -42,4 +42,4 @@ always @(*) begin
     endcase
 end
 
-endmodule      
+endmodule

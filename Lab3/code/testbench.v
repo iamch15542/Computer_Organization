@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-`define CYCLE_TIME 50			
+`define CYCLE_TIME 50   
 
 module TestBench;
   reg Clk, Start;
@@ -28,8 +28,8 @@ module TestBench;
   
   initial
   begin
-	$dumpfile("tb_wave.vcd");
-	$dumpvars(0, CPU);
+    $dumpfile("tb_wave.vcd");
+    $dumpvars(0, CPU);
 
     Clk = 0;
     Start = 0;
@@ -44,7 +44,7 @@ module TestBench;
   end
   
   always@(posedge Clk) begin
-  	$display("PC = %d", CPU.PC.pc_out_o);
+    $display("PC = %d", CPU.PC.pc_out_o);
     $display("Data Memory = %d, %d, %d, %d, %d, %d, %d, %d",CPU.Data_Memory.memory[0], CPU.Data_Memory.memory[1], CPU.Data_Memory.memory[2], CPU.Data_Memory.memory[3], CPU.Data_Memory.memory[4], CPU.Data_Memory.memory[5], CPU.Data_Memory.memory[6], CPU.Data_Memory.memory[7]);
     $display("Data Memory = %d, %d, %d, %d, %d, %d, %d, %d",CPU.Data_Memory.memory[8], CPU.Data_Memory.memory[9], CPU.Data_Memory.memory[10], CPU.Data_Memory.memory[11], CPU.Data_Memory.memory[12], CPU.Data_Memory.memory[13], CPU.Data_Memory.memory[14], CPU.Data_Memory.memory[15]);
     $display("Data Memory = %d, %d, %d, %d, %d, %d, %d, %d",CPU.Data_Memory.memory[16], CPU.Data_Memory.memory[17], CPU.Data_Memory.memory[18], CPU.Data_Memory.memory[19], CPU.Data_Memory.memory[20], CPU.Data_Memory.memory[21], CPU.Data_Memory.memory[22], CPU.Data_Memory.memory[23]);
@@ -56,7 +56,7 @@ module TestBench;
     $display("R24 =%d, R25 =%d, R26 =%d, R27 =%d, R28 =%d, R29 =%d, R30 =%d, R31 =%d", CPU.RF.Reg_File[24], CPU.RF.Reg_File[25], CPU.RF.Reg_File[26], CPU.RF.Reg_File[27], CPU.RF.Reg_File[28], CPU.RF.Reg_File[29], CPU.RF.Reg_File[30], CPU.RF.Reg_File[31]);
   end
 
-  always #(`CYCLE_TIME/2) Clk = ~Clk;	
+  always #(`CYCLE_TIME/2) Clk = ~Clk;    
   
 endmodule
 

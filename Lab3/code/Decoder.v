@@ -62,7 +62,7 @@ begin
                 MemRead_o <= 0;
                 MemWrite_o <= 0;
                 MemtoReg_o <= 2'bxx;
-                BranchType_o <= 2'bxx;                
+                BranchType_o <= 2'bxx;
             end
             else // R-type
             begin

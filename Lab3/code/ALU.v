@@ -11,22 +11,22 @@
 
 module ALU(
     src1_i,
-	src2_i,
-	ctrl_i,
-	shamt,
-	pc_add4,
-	result_o,
-	zero_o
-	);
+    src2_i,
+    ctrl_i,
+    shamt,
+    pc_add4,
+    result_o,
+    zero_o
+    );
      
 //I/O ports
 input  [32-1:0]  src1_i;
-input  [32-1:0]	 src2_i;
+input  [32-1:0]  src2_i;
 input  [4-1:0]   ctrl_i;
 input  [5-1:0]   shamt;
 input  [32-1:0]  pc_add4;
 
-output [32-1:0]	 result_o;
+output [32-1:0]  result_o;
 output           zero_o;
 
 //Internal signals
@@ -80,11 +80,11 @@ always @(*) begin
         SRAV    : result_o <= signed_src2 >>> signed_src1;    // sign bit shifted
         
         BEQ     : result_o <= src1_i - src2_i; // zero if true
-        BNE		: result_o <= src1_i - src2_i; // zero if false
+        BNE        : result_o <= src1_i - src2_i; // zero if false
         ADDI    : result_o <= signed_src1 + signed_src2;
         SLTIU   : result_o <= (unsigned_src1 < unsigned_src2);
-		// LUI     : result_o <= {src2_i[15:0], 16'b0};
-		ORI     : result_o <= src1_i | {16'b0, src2_i[15:0]};
+        // LUI     : result_o <= {src2_i[15:0], 16'b0};
+        ORI     : result_o <= src1_i | {16'b0, src2_i[15:0]};
         
         SLL     : result_o <= src1_i << shamt; // shamt will be 0
         MUL     : result_o <= src1_i * src2_i;
@@ -95,10 +95,4 @@ always @(*) begin
 end
 
 endmodule
-
-
-
-
-
-                    
                     
