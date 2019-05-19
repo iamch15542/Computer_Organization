@@ -1,0 +1,1 @@
+iverilog -o testbench.vvp testbench.v Simple_Single_CPU.v Adder.v ALU.v ALU_Ctrl.v Data_Memory.v Decoder.v Instr_Memory.v MUX_2to1.v MUX_3to1.v MUX_4to1.v ProgramCounter.v Reg_File.v Shift_Left_Two_32.v Sign_Extend.v && vvp testbench.vvp
