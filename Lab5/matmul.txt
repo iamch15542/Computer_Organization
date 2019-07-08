@@ -1,0 +1,53 @@
+//matrix multiplication initialization (push parameter onto stack)
+//	$24 = A[]base, $25 = B[]base, $26 = C[]base
+//	$21 = m, $22 = n, $23 = p
+//matrix multiplication start
+//	$3 = i, $4 = j, $5 = k
+//	$1 = const 4
+  addi $1, $0, 4
+  addi $3, $0, 0
+loop_i:
+  slt $6, $3, $21
+  beq $6, $0, exit
+  addi $4, $0, 0
+loop_j:
+  slt $6, $4, $22
+  beq $6, $0, end_j
+  addi $5, $0, 0
+loop_k:
+  slt $6, $5, $23
+  beq $6, $0, end_k
+//main work, C[i][j] = C[i][j] + A[i][k]*B[k][j]
+  mul $7, $3, $23
+  addu $8, $7, $4
+  mul $8, $8, $1
+  addu $9, $8, $26
+//	temp1 = 4(i*p+j) + C[]base
+  lw $10, 0($9)
+  mul $11, $3, $22
+  addu $12, $11, $5
+  mul $12, $12, $1
+  addu $13, $12, $24
+//	temp2 = 4(i*n+k) + A[]base
+  lw $14, 0($13)
+  mul $15, $5, $23
+  addu $16, $15, $4
+  mul $16, $16, $1
+  addu $17, $16, $25
+//	temp3 = 4(k*p+j) + B[]base
+  lw $18, 0($17)
+  mul $19, $18, $14
+  addu $20, $10, $19
+  sw $20, 0($9)
+//	C[i][j] = C[i][j] + A[i][k]*B[k][j]
+//end work
+  addi $5, $5, 1
+  j loop_k
+end_k:
+  addi $4, $4, 1
+  j loop_j
+end_j:
+  addi $3, $3, 1
+  j loop_i
+exit:
+//end matrix multiplication
